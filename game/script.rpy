@@ -2,9 +2,9 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define a = Character("นนท์")
-define b = Character("เมย์")
-define c = Character("บทพูดในใจ นนท์")
+define n = Character("นนท์")
+define m = Character("เมย์")
+define naijai_n = Character("บทพูดในใจ นนท์")
 define nuse = Character("พยาบาล")
 image Forest-Meat = "path/Forest-Meat.jpg"
 image black = im.Scale("path/black.jpg", 1920, 1080)
@@ -15,36 +15,46 @@ image medic-room-meat = "path/medic-room-meat.png"
 image medic-room-normal = "path/medic-room-normal.png"
 image Study-Room-meat = "path/Study-Room-meat.png"
 image study-room-normal = "path/study-room-normal.png"
+image meat = im.Scale("sub_Character/meat.png", 1200, 800)
 image worm = "path/worm.png"
 transform shake:
     xoffset -5
     linear 0.05 xoffset 5
     linear 0.05 xoffset -5
-    repeat
-
+    repeat  
 # The game starts here.
-
+transform slide_fade_out:
+    linear 1.0 yoffset -100 alpha 0.0
+screen wakeup():
+    add Solid("#000")
 label start:
     $ preferences.text_cps = 15
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+    
     play sound "heart.mp3"
-
+    
     
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
-   
+    
     
     
     # show eileen happy
     # w = หยุดตามหลักวิ
     scene black
     
-    "เสียงชีพจรเต้นช้าๆ (ตึก... ตึก...) คลอด้วยเสียงกรีดร้องแหลมสูงแว่วมาไกลๆ"
+    "เสียงชีพจรเต้นช้าๆ {cps=20}(ตึก... ตึก...){/cps} คลอด้วยเสียงกรีดร้องแหลมสูงแว่วมาไกลๆ"
     show text "{size=80}ฉากที่ 1.1 - มุมมองของฟุมิโนริ{/size}" at truecenter
+    
+    show screen wakeup
+    # hide black with fade
+    scene medic-room-meat
 
+    hide screen wakeup with Dissolve(3.0)
+    with vpunch
     with dissolve
 
     pause 3.0
@@ -53,24 +63,24 @@ label start:
 
     with dissolve
 
-    with fade
+    with fade 
 
     pause 2.0
     
     
-    stop play fadeout 3.0
+    stop sound fadeout 3.0
     play music "wind.mp3" fadein 3.0
     scene medic-room-meat
     "ภาพพร่าเบลอสีแดงเดือด{w=1}"
     "ผนังห้องเป็นก้อนเนื้อเต้นตุบๆ{w=1}"
     "มีหนอนสีคล้ำชอนไชไปมา{w=1}"
     show worm with moveinright
-    a"{size=80}พวกแกเคยตื่นมาในนรกไหม!!!!!!...{/size}"
+    n"{size=80}พวกแกเคยตื่นมาในนรกไหม!!!!!!...{/size}"
     with fade  
-    a"ตั้งแต่ผ่าตัดสมองหลังอุบัติเหตุรถยนต์ครั้งนั้น"
-    a"โลกที่เคยปกติของฉันมันก็ดับสลายไปตลอดกาล"
-    a"หมอเถื่อนพวกนั้นบอกว่ามันคือ 'โรคการรับรู้ผิดปกติ'"
-    a"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
+    n"ตั้งแต่ผ่าตัดสมองหลังอุบัติเหตุรถยนต์ครั้งนั้น"
+    n"โลกที่เคยปกติของฉันมันก็ดับสลายไปตลอดกาล"
+    n"หมอเถื่อนพวกนั้นบอกว่ามันคือ 'โรคการรับรู้ผิดปกติ'"
+    n"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
     hide worm 
     
     play sound "footstep.mp3" fadein 3.0
@@ -81,12 +91,15 @@ label start:
 
     with vpunch
     hide text
+    show meat:
+        pos(0,0)
+    with moveinright 
     nuse"อรุณสวัสดิ์ค่ะ" 
-    a"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลมลึกจนแก้วหูจะแตก!"
-    a"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"
-    a"ทรมานชะมัด ฉันเอามือกุมหัว กรีดร้องเหมือนคนบ้า ทุบตีทุกอย่างที่เข้าใกล้ ฉันอยากจะตาย... โลกเฮงซวยแบบนี้ฉันจะอยู่ไปทำไมวะ?"
+    n"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลมลึกจนแก้วหูจะแตก!"
+    n"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"
+    n"ทรมานชะมัด ฉันเอามือกุมหัว กรีดร้องเหมือนคนบ้า ทุบตีทุกอย่างที่เข้าใกล้ ฉันอยากจะตาย... โลกเฮงซวยแบบนี้ฉันจะอยู่ไปทำไมวะ?"
     
 
     # This ends the game.
-    play stop "wind.mp3" fadeout 3.0
+    stop sound fadeout 3.0
     return
