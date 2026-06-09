@@ -17,6 +17,8 @@ image Study-Room-meat = "path/Study-Room-meat.png"
 image study-room-normal = "path/study-room-normal.png"
 image meat = im.Scale("sub_Character/meat.png", 1200, 800)
 image worm = "path/worm.png"
+
+
 transform shake:
     xoffset -5
     linear 0.05 xoffset 5
@@ -103,5 +105,5 @@ label start:
 
     # This ends the game.
     stop sound fadeout 3.0
-    # jump Act-1.2
-    return
+    jump Act-1.2
+    
