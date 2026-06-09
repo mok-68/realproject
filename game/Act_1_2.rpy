@@ -1,36 +1,26 @@
 label Act_1_2:
+    # 1. เริ่มต้นด้วยฉากดำ พร้อมเปิดเสียงบรรยากาศและเสียงฝีเท้า
     scene black
+    play music "Hospital.mp3" fadein 3.0                  # เสียงบรรยากาศโรงพยาบาลรอบๆ
+    play sound "Sound Effects - Footsteps.mp3" fadein 2.0 # เสียงฝีเท้าเดิน
 
-    screen wakeup():
-        add Solid("#000")
+    # 2. แสดงตัวหนังสือชื่อฉากกลางจอ
+    show text "{size=80}ฉากที่ 1.2 - มุมมองคนทั่วไป{/size}" at truecenter with dissolve
+    pause 1.0
 
-    show screen wakeup 
-
-    play sound "Hospital.mp3" fadein 3.0
-
+    # 3. กล่องข้อความบรรยายขึ้น (เกมจะหยุดรอให้ผู้เล่นคลิกตรงนี้)
     "เสียงฝีเท้าตามทางเดิน {cps=20}(ตึก... ตึก...){/cps} คลอด้วยเสียงความวุ่นวายในโรงพยาบาล"
-    show text "{size=80}ฉากที่ 1.2 - มุมมองคนทั่วไป{/size}" at truecenter
 
-    play sound "Sound Effects - Footsteps.mp3" fadein 3.0
-
-    scene medic-room-normal
-
-    hide screen wakeup with Dissolve(3.0)
-    with vpunch
-    with dissolve
-
-    pause 3.0
-
-    hide text
-
-    with dissolve
-
-    with fade 
-
-    pause 2.0
+    # 4. หลังจากผู้เล่นคลิก -> ซ่อนข้อความชื่อฉาก, เล่นเสียงประตู, และเปิดไฟเข้าห้อง
+    hide text with dissolve
+    play sound "door_sound.mp3"                          # เสียงเปิดประตู
     
-    
-    stop sound fadeout 3.0
+    # ฉากดำจะค่อยๆ ละลายหายไปกลายเป็นห้องพยาบาลภายใน 3 วินาที
+    scene medic-room-normal with Dissolve(3.0)
+    pause 3.0                                            # รอให้ภาพแสดงเสร็จสมบูรณ์
 
-    play sound "Hospital-room.mp3" fadein 3.0
+    # 5. เปลี่ยนเสียงบรรยากาศรอบตัวให้กลายเป็นเสียงภายในห้องพยาบาล
+    stop music fadeout 3.0
+    play music "Hospital-room.mp3" fadein 3.0
 
+    # เขียนเนื้อเรื่องต่อตรงนี้...
