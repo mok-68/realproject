@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+﻿﻿# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -105,5 +105,10 @@ label start:
 
     # This ends the game.
     stop sound fadeout 3.0
+<<<<<<< HEAD
     jump Act-1.2
     
+=======
+    # jump Act-1.2
+    return
+>>>>>>> 09eff0c6244b7a20716d742eedced2f8d1514d52
