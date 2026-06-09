@@ -6,31 +6,31 @@ define a = Character("นนท์")
 define b = Character("เมย์")
 define c = Character("บทพูดในใจ นนท์")
 define nuse = Character("พยาบาล")
-
+image Forest-Meat = "path/Forest-Meat.jpg"
+image black = im.Scale("path/black.jpg", 1920, 1080)
+image Forest-Noramal = "path/Forest-Noramal.png"
+image House-meat = "path/House-meat.png"
+image House-Normal = "path/House-Normal.png"
+image medic-room-meat = "path/medic-room-meat.png"
+image medic-room-normal = "path/medic-room-normal.png"
+image Study-Room-meat = "path/Study-Room-meat.png"
+image study-room-normal = "path/study-room-normal.png"
+image worm = "path/worm.png"
+transform shake:
+    xoffset -5
+    linear 0.05 xoffset 5
+    linear 0.05 xoffset -5
+    repeat
 
 # The game starts here.
 
 label start:
-    $ config.temporary_text_cps = 15
+    $ preferences.text_cps = 15
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
     play sound "heart.mp3"
-    image Forest-Meat = "path/Forest-Meat.jpg"
-    image black = im.Scale("path/black.jpg", 1920, 1080)
-    image Forest-Noramal = "path/Forest-Noramal.png"
-    image House-meat = "path/House-meat.png"
-    image House-Normal = "path/House-Normal.png"
-    image medic-room-meat = "path/medic-room-meat.png"
-    image medic-room-normal = "path/medic-room-normal.png"
-    image Study-Room-meat = "path/Study-Room-meat.png"
-    image study-room-normal = "path/study-room-normal.png"
-    image worm = "path/worm.png"
-    transform shake:
-        xoffset -5
-        linear 0.05 xoffset 5
-        linear 0.05 xoffset -5
-        repeat
+
     
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images

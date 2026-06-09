@@ -6,6 +6,8 @@
 
 
 ## Basics ######################################################################
+define config.default_text_cps = 15
+default preferences.text_cps = 15
 
 ## A human-readable name of the game. This is used to set the default window
 ## title, and shows up in the interface and error reports.
