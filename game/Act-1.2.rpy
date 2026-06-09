@@ -2,7 +2,7 @@ label Act-1.2:
     scene black
 
     screen wakeup():
-    add Solid("#000")
+        add Solid("#000")
 
     show screen wakeup 
 
