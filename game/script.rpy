@@ -49,7 +49,7 @@ label start:
     "เสียงชีพจรเต้นช้าๆ {cps=20}(ตึก... ตึก...){/cps} คลอด้วยเสียงกรีดร้องแหลมสูงแว่วมาไกลๆ"
     show text "{size=80}ฉากที่ 1.1 - มุมมองของฟุมิโนริ{/size}" at truecenter
     
-    show screen wakeup
+    
     # hide black with fade
     scene medic-room-meat
 
