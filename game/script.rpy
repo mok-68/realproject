@@ -11,7 +11,7 @@ define nuse = Character("พยาบาล")
 # The game starts here.
 
 label start:
-
+    $ config.temporary_text_cps = 15
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
