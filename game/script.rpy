@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+﻿﻿# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -6,15 +6,15 @@ define n = Character("นนท์")
 define m = Character("เมย์")
 define naijai_n = Character("บทพูดในใจ นนท์")
 define nuse = Character("พยาบาล")
-image Forest-Meat = "path/Forest-Meat.jpg"
+image Forest_Meat = "path/Forest-Meat.jpg"
 image black = im.Scale("path/black.jpg", 1920, 1080)
-image Forest-Noramal = "path/Forest-Noramal.png"
-image House-meat = "path/House-meat.png"
-image House-Normal = "path/House-Normal.png"
-image medic-room-meat = "path/medic-room-meat.png"
-image medic-room-normal = "path/medic-room-normal.png"
-image Study-Room-meat = "path/Study-Room-meat.png"
-image study-room-normal = "path/study-room-normal.png"
+image Forest_Noramal = "path/Forest-Noramal.png"
+image House_meat = "path/House-meat.png"
+image House_Normal = "path/House-Normal.png"
+image medic_room_meat = "path/medic-room-meat.png"
+image medic_room_normal = "path/medic-room-normal.png"
+image Study_Room_meat = "path/Study-Room-meat.png"
+image study_room_normal = "path/study-room-normal.png"
 image meat = im.Scale("sub_Character/meat.png", 1200, 800)
 image worm = "path/worm.png"
 
@@ -105,11 +105,6 @@ label start:
 
     # This ends the game.
     stop sound fadeout 3.0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    jump Act_1_2
-=======
 
     jump Act-1.2
->>>>>>> c2d819b80efbb0c2ffffd46619ee7a3813d51331
     
