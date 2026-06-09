@@ -1,4 +1,4 @@
-label Act-1.2:
+label Act_1_2:
     scene black
 
     screen wakeup():
