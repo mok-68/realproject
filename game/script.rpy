@@ -105,11 +105,7 @@ label start:
 
     # This ends the game.
     stop sound fadeout 3.0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    jump Act_1_2
-=======
 
-    jump Act-1.2
->>>>>>> c2d819b80efbb0c2ffffd46619ee7a3813d51331
+    jump Act_1_2
+
     
