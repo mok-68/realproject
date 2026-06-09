@@ -106,5 +106,5 @@ label start:
     # This ends the game.
     stop sound fadeout 3.0
 
-    jump Act-1.2
+    jump Act_1_2
     
