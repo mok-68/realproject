@@ -27,6 +27,7 @@ transform slide_fade_out:
     linear 1.0 yoffset -100 alpha 0.0
 screen wakeup():
     add Solid("#000")
+
 label start:
     $ preferences.text_cps = 15
     # Show a background. This uses a placeholder by default, but you can
@@ -98,8 +99,9 @@ label start:
     n"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลมลึกจนแก้วหูจะแตก!"
     n"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"
     n"ทรมานชะมัด ฉันเอามือกุมหัว กรีดร้องเหมือนคนบ้า ทุบตีทุกอย่างที่เข้าใกล้ ฉันอยากจะตาย... โลกเฮงซวยแบบนี้ฉันจะอยู่ไปทำไมวะ?"
-    
+    $ i = 0
 
     # This ends the game.
     stop sound fadeout 3.0
+    # jump Act-1.2
     return
