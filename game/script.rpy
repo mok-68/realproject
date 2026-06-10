@@ -1,7 +1,7 @@
 define a = Character("นนท์", color="#2ddcff")
 define m = Character("เมย์", color="#ff60f7")
 define naijai_n = Character("บทพูดในใจ นนท์")
-define nuse = Character("พยาบาล")
+define nuse = Character("พยาบาล",color="#fafafaff")
 image Forest_Meat = "path/Forest-Meat.jpg"
 image black = im.Scale("path/black.jpg", 1920, 1080)
 image Forest_Noramal = "path/Forest-Noramal.png"
@@ -11,7 +11,7 @@ image medic_room_meat = "path/medic-room-meat.png"
 image medic_room_normal = "path/medic-room-normal.png"
 image Study_Room_meat = "path/Study-Room-meat.png"
 image study_room_normal = "path/study-room-normal.png"
-image meat = im.Scale("sub_Character/meat.png", 1600, 1000)
+image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image worm = "path/worm.png"
 
 
@@ -92,15 +92,11 @@ label start:
 
     with vpunch
     hide text
-    show meat:
-        pos(0,0)
+    show meat at left
     with moveinright 
-<<<<<<< HEAD
     nuse"!@/*-^&$*@...." 
-=======
-    nuse"" 
->>>>>>> 8fc04ec9c7093613ccaa9075ffa7fee878de916d
-    a"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลมลึกจนแก้วหูจะแตก!"
+    a"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลม"
+    a"ลึกจนแก้วหูจะแตก!"
     a"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"    
     a"ทรมานชะมัด ฉันเอามือกุมหัว กรีดร้องเหมือนคนบ้า ทุบตีทุกอย่างที่เข้าใกล้ ฉันอยากจะตาย... โลกเฮงซวยแบบนี้ฉันจะอยู่ไปทำไมวะ?"
     # This ends the game.
