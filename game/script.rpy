@@ -15,10 +15,10 @@ image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
-image stupid_video = Movie(play="video/StupidEndding.webm", loop=False, channel="movie", start_image="black"
-
-)
+image stupid_video = Movie(play="video/StupidEndding.webm", loop=False, channel="movie", start_image="black")
 image StupidEndding = "Endding/StupidEndding.png"
+image dev_logo = "images/Dev/HORIZON_LOGO.png"
+
 
 transform shadow:
     alpha 0.3
@@ -36,6 +36,16 @@ transform slide_fade_out:
 screen wakeup():
     add Solid("#000")
 
+label splashscreen:
+    scene black
+    pause 1.0
+    show dev_logo at truecenter 
+    with Dissolve(1.3)
+    $ renpy.pause(3.0, hard=True)
+    hide dev_logo 
+    with Dissolve(1.3)
+    pause 1.0
+    return
 
 label start:
     $ preferences.text_cps = 15
