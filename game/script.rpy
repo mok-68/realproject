@@ -18,7 +18,7 @@ image worm = "path/worm.png"
 image stupid_video = Movie(play="video/StupidEndding.webm", loop=False, channel="movie", start_image="black")
 image StupidEndding = "Endding/StupidEndding.png"
 image dev_logo = "images/Dev/HORIZON_LOGO.png"
-
+image game_logo = "images/Element/POF_logo.png"
 
 transform shadow:
     alpha 0.3
@@ -43,6 +43,12 @@ label splashscreen:
     with Dissolve(1.3)
     $ renpy.pause(3.0, hard=True)
     hide dev_logo 
+    with Dissolve(1.3)
+    pause 1.0
+    show game_logo at truecenter 
+    with Dissolve(1.3)
+    $ renpy.pause(3.0, hard=True)
+    hide game_logo 
     with Dissolve(1.3)
     pause 1.0
     return
