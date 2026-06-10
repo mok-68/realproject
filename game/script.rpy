@@ -106,7 +106,9 @@ label start:
     show meat_shadows at left ,shadow
     show meat at left
     with moveinright 
+    play sound "sound-effect/meat-sound.wav" loop
     nuse"!@/*-^&$*@...." 
+    stop sound fadeout 0.5
     non"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลม"
     non"ลึกจนแก้วหูจะแตก!"
     non"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"    
