@@ -1,5 +1,5 @@
-define a = Character("นนท์", color="#000000")
-define m = Character("เมย์", color="#000000")
+define a = Character("นนท์", color="#2ddcff")
+define m = Character("เมย์", color="#ff60f7")
 define naijai_n = Character("บทพูดในใจ นนท์")
 define nuse = Character("พยาบาล")
 image Forest_Meat = "path/Forest-Meat.jpg"
@@ -32,7 +32,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
     
-    play sound "heart.mp3"
+    play sound "sound-effect/heart.mp3"
     
     
     # This shows a character sprite. A placeholder is used, but you can
@@ -68,7 +68,7 @@ label start:
     
     
     stop sound fadeout 3.0
-    play music "wind.mp3" fadein 3.0
+    play music "sound-effect/wind.mp3" fadein 3.0
     scene medic-room-meat
     "ภาพพร่าเบลอสีแดงเดือด{w=1}"
     "ผนังห้องเป็นก้อนเนื้อเต้นตุบๆ{w=1}"
@@ -81,11 +81,13 @@ label start:
     a"หมอเถื่อนพวกนั้นบอกว่ามันคือ 'โรคการรับรู้ผิดปกติ'"
     a"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
     hide worm 
-    
-    play sound "footstep.mp3" fadein 3.0
-    "พยาบาลที่เดินเข้ามาฉีดยา... {w=5}"
-    play stop "footstep.mp3" fadeout 3.0
-    "รูปร่างของเธอเหมือนเศษเนื้อเหลวๆ ที่พยายามประกอบร่างเป็นทรงมนุษย์ เสียงที่เธอทักทายฉันว่า"
+    play sound "sound-effect/door_sound.mp3"
+    pause 5.0
+    stop sound
+    play sound "sound-effect/Sound Effects - Footsteps.mp3" fadein 3.0
+    a"พยาบาลที่เดินเข้ามาฉีดยา... {w=5}"
+    stop sound fadeout 3.0
+    a"รูปร่างของเธอเหมือนเศษเนื้อเหลวๆ ที่พยายามประกอบร่างเป็นทรงมนุษย์ เสียงที่เธอทักทายฉันว่า"
     show text "{size=60}ตุบ!{/size}" at truecenter
 
     with vpunch
@@ -93,14 +95,11 @@ label start:
     show meat:
         pos(0,0)
     with moveinright 
-    nuse"อรุณสวัสดิ์ค่ะ" 
+    nuse"!@/*-^&$*@...." 
     a"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลมลึกจนแก้วหูจะแตก!"
     a"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"    
     a"ทรมานชะมัด ฉันเอามือกุมหัว กรีดร้องเหมือนคนบ้า ทุบตีทุกอย่างที่เข้าใกล้ ฉันอยากจะตาย... โลกเฮงซวยแบบนี้ฉันจะอยู่ไปทำไมวะ?"
-    $ i = 0
-
     # This ends the game.
     stop sound fadeout 3.0
-
 jump Act_1_2
     
