@@ -12,9 +12,14 @@ image medic_room_normal = "path/medic-room-normal.png"
 image Study_Room_meat = "path/Study-Room-meat.png"
 image study_room_normal = "path/study-room-normal.png"
 image meat = im.Scale("sub_Character/meat.png", 1000, 800)
+image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image worm = "path/worm.png"
 
-
+transform shadow:
+    alpha 0.3
+    xoffset 15
+    yoffset 15
+    matrixcolor SaturationMatrix(0)
 transform shake:
     xoffset -5
     linear 0.05 xoffset 5
@@ -92,6 +97,7 @@ label start:
 
     with vpunch
     hide text
+    show meat_shadows at left ,shadow
     show meat at left
     with moveinright 
     nuse"!@/*-^&$*@...." 
