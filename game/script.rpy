@@ -1,4 +1,4 @@
-define non = Character("นนท์", color="#2ddcff")
+﻿define non = Character("นนท์", color="#2ddcff")
 define mei = Character("เมย์", color="#ff60f7")
 define naijai_n = Character("บทพูดในใจ นนท์")
 define nuse = Character("พยาบาล",color="#fafafaff")
@@ -15,6 +15,8 @@ image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
+image stupid_video = Movie(play="video/StupidEndding.mp4", loop=False)
+image StupidEndding = "Endding/stupid_endding.png"
 
 transform shadow:
     alpha 0.3
