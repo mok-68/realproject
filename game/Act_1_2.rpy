@@ -1,4 +1,24 @@
-image nus = im.Scale("images/sub_Character/4.png", 1800, 1000)
+# --- ประกาศฉากกระพริบสลับกัน ---
+image scene_flicker:
+    "medic-room-normal"  # ฉากแรก 
+    pause 0.2           
+    "medic-room-meat"    # สลับเป็นฉากเนื้อ
+    pause 0.2
+    repeat               
+
+# --- ประกาศตัวละครกระพริบสลับกัน ---
+image char_flicker:
+    "nus"                # ตัวละครร่างพยาบาลปกติ
+    pause 0.2
+    "meat_scaled"               # สลับเป็นร่างเนื้อ
+    pause 0.2
+    Solid("#0000")       # สลับเป็นภาพโปร่งใส (ตัวละครวับๆ แวมๆ)
+    pause 0.2
+    repeat
+
+image meat_scaled = im.Scale("sub_Character/meat.png", 2296, 1796)
+
+image nus = im.Scale("sub_Character/4.png", 2296, 1796)
 
 
 label Act_1_2:
@@ -26,4 +46,27 @@ label Act_1_2:
     stop music fadeout 3.0
     play music "audio/sound-effect/Hospital-room.mp3" fadein 3.0
 
-    show nus with moveinright
+    # 🔥 ปรับตรงนี้: ใช้ ATL สั่งเลื่อนตัวละครจากขวามาซ้าย พร้อมขึ้นข้อความทันที
+    show nus:
+        xpos 1.0 ypos 0.0    # วางตำแหน่งเริ่มต้นไว้ที่นอกจอฝั่งขวาสุด (xpos 1.0)
+        linear 1.2 xpos -0.25  # ค่อยๆ เลื่อนมาทางซ้ายจนเต็มจอ (xpos 0.0) ภายในเวลา 1.2 วินาที
+
+    nuse"น่าสงสารจัง..."
+    nuse"คนไข้รอดชีวิตจากอุบัติเหตุรถยนต์...ครอบครัว...ของเขา"
+    nuse"เสียชีวิตกันหมดเลย..."
+    nuse"ตอนนี้เขามีอาการข้างเคียงจากการผ่าตัดสมองขั้นรุนแรง"
+    nuse"เขาไม่ยอมให้ใครเข้าใกล้เลย...แม้แต่พยาบาลที่ดูแลเขาอยู่ทุกวัน"
+    nuse"เขามักจะเอามือกุมหู กรีดร้องโวยวายเหมือนคนเสียสติอยู่ตลอดเวลา"
+    nuse"แววตาของเขาช่างโดดเดี่ยวและน่ากลัวเหลือเกิน"
+    nuse"เหมือนเขากำลังติดอยู่ในนรกที่พวกเรามองไม่เห็น..."
+
+    scene scene_flicker
+    show char_flicker:
+        xpos -0.25 ypos 0.0
+
+    
+    pause 3.0
+
+   
+    scene black with dissolve
+jump Act2_1
