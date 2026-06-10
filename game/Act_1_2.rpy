@@ -1,3 +1,6 @@
+image nus = im.Scale("images/sub_Character/4.png", 1800, 1000)
+
+
 label Act_1_2:
     # 1. เริ่มต้นด้วยฉากดำ พร้อมเปิดเสียงบรรยากาศและเสียงฝีเท้า (ระบุโฟลเดอร์ถูกต้องแล้ว)
     scene black
@@ -23,4 +26,4 @@ label Act_1_2:
     stop music fadeout 3.0
     play music "audio/sound-effect/Hospital-room.mp3" fadein 3.0
 
-    # เขียนเนื้อเรื่องต่อตรงนี้...
+    show nus with moveinright
