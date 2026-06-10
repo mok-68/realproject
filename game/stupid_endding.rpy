@@ -1,6 +1,7 @@
 label stupid_endding:
     window hide
     scene black
+    pause 0.2
     scene stupid_video
     $ renpy.pause(2.0, hard=True)
     scene black with dissolve

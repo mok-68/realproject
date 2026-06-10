@@ -15,8 +15,8 @@ image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
-image stupid_video = Movie(play="video/StupidEndding.mp4", loop=False)
-image StupidEndding = "Endding/stupid_endding.png"
+image stupid_video = Movie(play="video/StupidEndding.webm", loop=False)
+image StupidEndding = "Endding/StupidEndding.png"
 
 transform shadow:
     alpha 0.3
