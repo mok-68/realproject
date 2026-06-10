@@ -1,20 +1,39 @@
 label Act2_1:
+    scene medic-room-meat
+    play music "sound-effect/heart.mp3" fadein 3.0
+    show afraid2 at left
+    with dissolve
     a "ในขณะที่ฉันกำลังจะใช้เศษแก้วปาดคอตัวเองให้จบๆ ไป..."
     
-    a "เธอก็ปรากฏตัวขึ้นมา... เมย์..."
-    
-    a "วินาทีที่เธอเอื้อมมือมาจับมือที่สั่นเทาของฉัน..."
-    
-    # จังหวะนี้อารมณ์เริ่มเปลี่ยนจากสิ้นหวังเป็นความรู้สึกทึ่ง/หลงใหล ใส่ {w} เพื่อให้ผู้เล่นค่อยๆ กดอ่าน
-    a "ผิวสัมผัสของเธอมันช่างเรียบเนียน...{w=0.5} นุ่มนวล..."
-    
-    a "ไม่มีเมือกเหลว... ไม่มีกลิ่นเหม็นคาว..."
-    
-    a "เส้นผมของเธอสะท้อนแสงแดดเป็นประกายงดงาม"
-    
-    a "ในขณะที่มนุษย์ทุกคนกลายเป็นปีศาจเนื้อเน่า..."
-    
-    a "มีแค่เธอคนเดียว...{w=0.8} ที่ยังคงเป็น 'มนุษย์' ในสายตาของฉัน"
+    a "เธอก็ปรากฏตัวขึ้นมา..."
+    a "เมย์"
+    stop music fadeout 3.0
+
+    scene black with dissolve
+    pause 1.0
+    show text "{size=60}วินาทีที่เธอเอื้อมมือมาจับมือที่สั่นเทาของฉัน...{/size}" at truecenter with dissolve
+    pause
+    hide text with dissolve
+
+    show text "{size=60}ผิวสัมผัสของเธอมันช่างเรียบเนียน...{w=0.5} นุ่มนวล...{/size}" at truecenter with dissolve
+    pause
+    hide text with dissolve
+
+    show text "{size=60}ไม่มีเมือกเหลว... ไม่มีกลิ่นเหม็นคาว...{/size}" at truecenter with dissolve
+    pause
+    hide text with dissolve
+
+    show text "{size=60}เส้นผมของเธอสะท้อนแสงแดดเป็นประกายงดงาม{/size}" at truecenter with dissolve
+    pause
+    hide text with dissolve
+
+    show text "{size=60}ในขณะที่มนุษย์ทุกคนกลายเป็นปีศาจเนื้อเน่า...{/size}" at truecenter with dissolve
+    pause
+    hide text with dissolve
+
+    show text "{size=60}มีแค่เธอคนเดียว...{w=0.8} ที่ยังคงเป็น 'มนุษย์' ในสายตาของฉัน{/size}" at truecenter with dissolve
+    pause
+    hide text with dissolve
     
     # ส่วนของเมย์ 
     b "นนท์... ร้องไห้ทำไมคะ? เจ็บตรงไหนหรือเปล่า?"
