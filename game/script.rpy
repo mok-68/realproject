@@ -15,7 +15,9 @@ image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
-image stupid_video = Movie(play="video/StupidEndding.webm", loop=False, channel="movie", start_image="black")
+image stupid_video = Movie(play="video/StupidEndding.webm", loop=False, channel="movie", start_image="black"
+
+)
 image StupidEndding = "Endding/StupidEndding.png"
 
 transform shadow:
@@ -89,6 +91,7 @@ label start:
     non"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
     hide worm 
     play sound "sound-effect/door_sound.mp3"
+    $ renpy.pause(2.0, hard=True)
     pause 5.0
     stop sound
     show Door_meat 
