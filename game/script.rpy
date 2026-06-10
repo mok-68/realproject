@@ -56,7 +56,7 @@ label start:
     
     "เสียงชีพจรเต้นช้าๆ {cps=20}(ตึก... ตึก...){/cps} คลอด้วยเสียงกรีดร้องแหลมสูงแว่วมาไกลๆ"
     show text "{size=80}ฉากที่ 1.1 - มุมมองของฟุมิโนริ{/size}" at truecenter
-
+    
     # hide black with fade
     scene medic-room-meat
 
@@ -103,7 +103,6 @@ label start:
     with vpunch
     hide text
 
-
     show meat_shadows at left ,shadow
     show meat at left
     with moveinright 
@@ -116,4 +115,3 @@ label start:
     stop sound fadeout 3.0
 # return
 jump Act_1_2
-    
