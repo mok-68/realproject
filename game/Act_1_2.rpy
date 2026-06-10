@@ -1,3 +1,7 @@
+image nus = im.Scale("images/sub_Character/4.png", 900, 500)
+
+
+
 label Act_1_2:
     # 1. เริ่มต้นด้วยฉากดำ พร้อมเปิดเสียงบรรยากาศและเสียงฝีเท้า (ระบุโฟลเดอร์ถูกต้องแล้ว)
     scene black
@@ -13,14 +17,14 @@ label Act_1_2:
 
     # 4. หลังจากผู้เล่นคลิก -> ซ่อนข้อความชื่อฉาก, เล่นเสียงประตู, และเปิดไฟเข้าห้อง
     hide text with dissolve
-    play sound "audio/sound-effect/door_sound.mp3"                          
+    play sound "audio/sound-effect/door_sound.mp3"  
+
+    play sound "audio/sound-effect/Hospital-room.mp3" fadein 3.0
+    scene medic-room-normal with fade
+
+
+    show nus with moveinright                        
     
-    # ฉากดำจะค่อยๆ ละลายหายไปกลายเป็นห้องพยาบาลภายใน 3 วินาที
-    scene medic-room-normal with Dissolve(3.0)
-    pause 3.0                                            
+    # ฉากดำจะay music "audio/sound-effect/Hospital-room.mp3" fadein 3.0
 
-    # 5. เปลี่ยนเสียงบรรยากาศรอบตัวให้กลายเป็นเสียงภายในห้องพยาบาล
-    stop music fadeout 3.0
-    play music "audio/sound-effect/Hospital-room.mp3" fadein 3.0
-
-    # เขียนเนื้อเรื่องต่อตรงนี้...
+    

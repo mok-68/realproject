@@ -11,7 +11,7 @@ image medic_room_meat = "path/medic-room-meat.png"
 image medic_room_normal = "path/medic-room-normal.png"
 image Study_Room_meat = "path/Study-Room-meat.png"
 image study_room_normal = "path/study-room-normal.png"
-image meat = im.Scale("sub_Character/meat.png", 1200, 800)
+image meat = im.Scale("sub_Character/meat.png", 1600, 1000)
 image worm = "path/worm.png"
 
 
@@ -93,7 +93,7 @@ label start:
     show meat:
         pos(0,0)
     with moveinright 
-    nuse"อรุณสวัสดิ์ค่ะ" 
+    nuse"" 
     a"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลมลึกจนแก้วหูจะแตก!"
     a"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"    
     a"ทรมานชะมัด ฉันเอามือกุมหัว กรีดร้องเหมือนคนบ้า ทุบตีทุกอย่างที่เข้าใกล้ ฉันอยากจะตาย... โลกเฮงซวยแบบนี้ฉันจะอยู่ไปทำไมวะ?"
