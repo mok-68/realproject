@@ -1,7 +1,7 @@
 label Act2_1:
     scene medic-room-meat
     play audio "sound-effect/heart.mp3" loop fadein 3.0
-    show afraid2 at left
+    show afraid4 at left
     with dissolve
     non "ในขณะที่ฉันกำลังจะใช้เศษแก้วปาดคอตัวเองให้จบๆ ไป..."
     
@@ -11,7 +11,7 @@ label Act2_1:
     non "เธอก็ปรากฏตัวขึ้นมา..."
     stop sound fadeout 1.0
     non "เมย์"
-    hide afraid2 with dissolve
+    hide afraid4 with dissolve
     stop audio fadeout 3.0
 
     scene black with dissolve
