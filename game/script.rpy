@@ -13,6 +13,7 @@ image Study_Room_meat = "path/Study-Room-meat.png"
 image study_room_normal = "path/study-room-normal.png"
 image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
+image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
 
 transform shadow:
@@ -30,6 +31,7 @@ transform slide_fade_out:
     linear 1.0 yoffset -100 alpha 0.0
 screen wakeup():
     add Solid("#000")
+
 
 label start:
     $ preferences.text_cps = 15
@@ -52,8 +54,7 @@ label start:
     
     "เสียงชีพจรเต้นช้าๆ {cps=20}(ตึก... ตึก...){/cps} คลอด้วยเสียงกรีดร้องแหลมสูงแว่วมาไกลๆ"
     show text "{size=80}ฉากที่ 1.1 - มุมมองของฟุมิโนริ{/size}" at truecenter
-    
-    
+
     # hide black with fade
     scene medic-room-meat
 
@@ -88,6 +89,9 @@ label start:
     play sound "sound-effect/door_sound.mp3"
     pause 5.0
     stop sound
+    show Door_meat 
+    pause 5.0
+    hide Door_meat 
     play sound "sound-effect/Sound Effects - Footsteps.mp3" fadein 3.0
     non"พยาบาลที่เดินเข้ามาฉีดยา... {w=5}"
     stop sound fadeout 3.0
@@ -96,6 +100,8 @@ label start:
 
     with vpunch
     hide text
+
+
     show meat_shadows at left ,shadow
     show meat at left
     with moveinright 
@@ -106,5 +112,6 @@ label start:
     non"ทรมานชะมัด ฉันเอามือกุมหัว กรีดร้องเหมือนคนบ้า ทุบตีทุกอย่างที่เข้าใกล้ ฉันอยากจะตาย... โลกเฮงซวยแบบนี้ฉันจะอยู่ไปทำไมวะ?"
     # This ends the game.
     stop sound fadeout 3.0
+# return
 jump Act_1_2
     
