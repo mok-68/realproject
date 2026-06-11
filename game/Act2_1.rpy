@@ -42,16 +42,23 @@ label Act2_1:
     
     # ส่วนของเมย์ 
     scene medic-room-meat
-    show mei movement2 at right with dissolve
+    show mei movement2:
+        zoom 1.5      
+        xalign 1.0    
+    with dissolve
     mei "นนท์... ร้องไห้ทำไมคะ? เจ็บตรงไหนหรือเปล่า?"
-    show mei smile1
+    show mei smile1 :
+        zoom 1.5      
+        xalign 1.0    
     mei "ไม่เป็นไรนะ..."
     
     # ใช้ {w} เพื่อเว้นจังหวะให้ดูเหมือนเมย์ค่อยๆ ขยับเข้าไปกระซิบใกล้ๆ
     mei "ถ้าโลกภายนอกมันทำให้เธอเจ็บปวดขนาดนั้น...{w=0.5} ขยับเข้ามาใกล้ๆ เมย์สิคะ"
     
     mei "เมย์จะปกป้องเธอเอง..."
-    show mei smile2
+    show mei smile2 :
+        zoom 1.5      
+        xalign 1.0    
     mei "จะเป็นดวงตา...{w=0.3} เป็นหู...{w=0.3} เป็นทุกอย่างให้เธอเอง..."
     hide mei smile2 with dissolve
     scene black with dissolve

@@ -17,6 +17,8 @@ image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
 image stupid_video = Movie(play="video/StupidEndding.webm", loop=False, channel="movie", start_image="black")
 image StupidEndding = "Endding/StupidEndding.png"
+image dev_logo = "images/Dev/HORIZON_LOGO.png"
+image game_logo = "images/Element/POF_logo.png"
 
 transform shadow:
     alpha 0.3
@@ -34,6 +36,22 @@ transform slide_fade_out:
 screen wakeup():
     add Solid("#000")
 
+label splashscreen:
+    scene black
+    pause 1.0
+    show dev_logo at truecenter 
+    with Dissolve(1.3)
+    $ renpy.pause(3.0, hard=True)
+    hide dev_logo 
+    with Dissolve(1.3)
+    pause 1.0
+    show game_logo at truecenter 
+    with Dissolve(1.3)
+    $ renpy.pause(3.0, hard=True)
+    hide game_logo 
+    with Dissolve(1.3)
+    pause 1.0
+    return
 
 label start:
     $ preferences.text_cps = 15
@@ -89,6 +107,7 @@ label start:
     non"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
     hide worm 
     play sound "sound-effect/door_sound.mp3"
+    $ renpy.pause(2.0, hard=True)
     pause 5.0
     stop sound
     show Door_meat 

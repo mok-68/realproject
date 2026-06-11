@@ -23,7 +23,7 @@ label stupid_endding:
     pause
     hide text with dissolve
 
-    show text "{size=46}ในท้ายที่สุด...{w=0.6} เเปลือกตาของผมก็หนักอึ้งเกินกว่าจะฝืน{/size}" at truecenter with dissolve
+    show text "{size=46}ในท้ายที่สุด...{w=0.6} เปลือกตาของผมก็หนักอึ้งเกินกว่าจะฝืน{/size}" at truecenter with dissolve
     pause
     hide text with dissolve
 
