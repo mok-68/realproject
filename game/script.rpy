@@ -15,7 +15,7 @@ image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
-image stupid_video = Movie(play="video/StupidEndding.webm", loop=False, channel="movie", start_image=Solid("#000"))
+image stupid_video = Movie(play="StupidEndding.webm", loop=False, channel="movie", start_image=Solid("#000"))
 image StupidEndding = "Endding/StupidEnding.png"
 image dev_logo = "images/Dev/HORIZON_LOGO.png"
 image game_logo = "images/Element/POF_logo.png"
