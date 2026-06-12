@@ -69,7 +69,7 @@ label Act_1_2:
         xpos -0.25 ypos 0.0
 
     
-    pause 3.0
+    pause 2.0
 
    
     scene black with dissolve
