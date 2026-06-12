@@ -19,7 +19,7 @@ init python:
             renpy.music.stop(channel="text")
     
 # image ctc = "ctc_arrow"
-image eyes = im.Scale("Element/ctc_eyes.png", 90, 70)
+image eyes = im.Scale("Element/eyes_new.png",50 , 60)
 image ctc:
     "eyes"
     linear 0.5 alpha 1.0
