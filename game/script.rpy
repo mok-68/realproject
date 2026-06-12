@@ -1,10 +1,23 @@
 ﻿init python:
+    renpy.music.register_channel(
+        "text",
+        mixer="sfx",
+        loop=False
+    )
+
+init python:
     def type_sound(event, interact=True, **kwargs):
         if event == "show":
-            renpy.sound.play("sound-effect/text_sound.mp3")
-        elif event == "slow_done" or event == "end":
-            renpy.sound.stop()
-        
+            renpy.music.set_volume(0.45, channel="text")
+            renpy.music.play(
+                "sound-effect/text_sound.mp3",
+                channel="text",
+                loop=True
+            )
+
+        elif event in ("slow_done", "end"):
+            renpy.music.stop(channel="text")
+    
 # image ctc = "ctc_arrow"
 image eyes = im.Scale("Element/ctc_eyes.png", 90, 70)
 image ctc:
@@ -99,7 +112,7 @@ label start:
     scene black
     
     "เสียงชีพจรเต้นช้าๆ {cps=20}(ตึก... ตึก...){/cps} คลอด้วยเสียงกรีดร้องแหลมสูงแว่วมาไกลๆ"
-    show text "{size=80}ฉากที่ 1.1 - มุมมองของฟุมิโนริ{/size}" at truecenter
+    show text "{size=80}ฉากที่ 1.1 - มุมมองของนนท์{/size}" at truecenter
     
     # hide black with fade
     scene medic-room-meat
@@ -119,7 +132,7 @@ label start:
     pause 2.0
  
     stop sound fadeout 3.0
-    play music "sound-effect/wind.mp3" fadein 3.0
+    play music "sound-effect/wind.mp3" volume 0.2 fadein 3.0
     scene medic-room-meat
     "ภาพพร่าเบลอสีแดงเดือด{w=1}"
     "ผนังห้องเป็นก้อนเนื้อเต้นตุบๆ{w=1}"
@@ -129,22 +142,29 @@ label start:
     with fade  
     non"ตั้งแต่ผ่าตัดสมองหลังอุบัติเหตุรถยนต์ครั้งนั้น"
     non"โลกที่เคยปกติของฉันมันก็ดับสลายไปตลอดกาล"
-    non"หมอเถื่อนพวกนั้นบอกว่ามันคือ 'โรคการรับรู้ผิดปกติ'"
-    non"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
+    non"หมอบอกว่ามันคือ 'โรคการรับรู้ผิดปกติ'"
+    non"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ"
+    non "มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้"
+    non "ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
+
     hide worm 
+    show Door_meat 
     play sound "sound-effect/door_sound.mp3"
     $ renpy.pause(2.0, hard=True)
     pause 5.0
     stop sound
-    show Door_meat 
+    
     pause 5.0
     hide Door_meat 
-    play sound "sound-effect/Sound Effects - Footsteps.mp3" fadein 3.0
+
+    play audio "./audio/sound-effect/footstep_meat.mp3" volume 10.0
     non"พยาบาลที่เดินเข้ามาฉีดยา... {w=5}"
     stop sound fadeout 3.0
     non"รูปร่างของเธอเหมือนเศษเนื้อเหลวๆ ที่พยายามประกอบร่างเป็นทรงมนุษย์ เสียงที่เธอทักทายฉันว่า"
     show text "{size=60}ตุบ!{/size}" at truecenter
     $ renpy.pause(1.0, hard=True)
+    stop audio fadeout 3.0
+
     with vpunch
     hide text
 
