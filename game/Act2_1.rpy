@@ -103,3 +103,4 @@ label Act2_1:
     
     non "(ถ้ามีเธอนั่งอยู่ข้างๆ... นรกแห่งนี้มันก็คือสรวงสวรรค์ชั้นเจ็ดชัดๆ)"
     hide non normal2 with dissolve
+jump Act2_2
