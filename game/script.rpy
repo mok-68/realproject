@@ -15,8 +15,10 @@ image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
 image worm = "path/worm.png"
-image stupid_video = Movie(play="video/StupidEndding.webm", loop=False)
-image StupidEndding = "Endding/StupidEndding.png"
+image stupid_video = Movie(play="video/StupidEnding.webm", loop=False, channel="movie", start_image="black")
+image StupidEnding = "Endding/StupidEnding.png"
+image dev_logo = "images/Dev/HORIZON_LOGO.png"
+image game_logo = "images/Element/POF_logo.png"
 
 transform shadow:
     alpha 0.3
@@ -34,6 +36,22 @@ transform slide_fade_out:
 screen wakeup():
     add Solid("#000")
 
+label splashscreen:
+    scene black
+    pause 1.0
+    show dev_logo at truecenter 
+    with Dissolve(1.3)
+    $ renpy.pause(3.0, hard=True)
+    hide dev_logo 
+    with Dissolve(1.3)
+    pause 1.0
+    show game_logo at truecenter 
+    with Dissolve(1.3)
+    $ renpy.pause(3.0, hard=True)
+    hide game_logo 
+    with Dissolve(1.3)
+    pause 1.0
+    return
 
 label start:
     $ preferences.text_cps = 15
@@ -89,6 +107,7 @@ label start:
     non"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
     hide worm 
     play sound "sound-effect/door_sound.mp3"
+    $ renpy.pause(2.0, hard=True)
     pause 5.0
     stop sound
     show Door_meat 
@@ -106,7 +125,9 @@ label start:
     show meat_shadows at left ,shadow
     show meat at left
     with moveinright 
+    play sound "sound-effect/meat-sound.wav" loop
     nuse"!@/*-^&$*@...." 
+    stop sound fadeout 0.5
     non"...แต่หูของฉันกลับได้ยินเป็นเสียงสุกรโดนเชือดที่กรีดร้องแหลม"
     non"ลึกจนแก้วหูจะแตก!"
     non"อาหารโรงพยาบาลรสชาติเหมือนขยะเปียกค้างคืนผสมเลือดคาวๆ"    
