@@ -1,10 +1,23 @@
 ﻿init python:
+    renpy.music.register_channel(
+        "text",
+        mixer="sfx",
+        loop=False
+    )
+
+init python:
     def type_sound(event, interact=True, **kwargs):
         if event == "show":
-            renpy.sound.play("sound-effect/text_sound.mp3")
-        elif event == "slow_done" or event == "end":
-            renpy.sound.stop()
-        
+            renpy.music.set_volume(0.45, channel="text")
+            renpy.music.play(
+                "sound-effect/text_sound.mp3",
+                channel="text",
+                loop=True
+            )
+
+        elif event in ("slow_done", "end"):
+            renpy.music.stop(channel="text")
+    
 # image ctc = "ctc_arrow"
 image eyes = im.Scale("Element/ctc_eyes.png", 90, 70)
 image ctc:
@@ -108,7 +121,7 @@ label start:
     pause 2.0
  
     stop sound fadeout 3.0
-    play music "sound-effect/wind.mp3" fadein 3.0
+    play music "sound-effect/wind.mp3" volume 0.2 fadein 3.0
     scene medic-room-meat
     "ภาพพร่าเบลอสีแดงเดือด{w=1}"
     "ผนังห้องเป็นก้อนเนื้อเต้นตุบๆ{w=1}"
