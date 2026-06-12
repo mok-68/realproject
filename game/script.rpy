@@ -30,7 +30,7 @@ define non = Character("นนท์", color="#2ddcff" ,callback=type_sound, ctc
 define mei = Character("เมย์", color="#ff60f7",callback=type_sound, ctc="ctc")
 define bas = Character("บาส", color="#ff0000",callback=type_sound, ctc="ctc")
 define naijai_n = Character("บทพูดในใจ นนท์",callback=type_sound, ctc="ctc")
-define nuse = Character("พยาบาล",color="#fafafaff", ctc="ctc")
+define nuse = Character("พยาบาล",color="#fafafaff", callback=type_sound, ctc="ctc")
 image bas normal = "MainCharacter/Bas_normal.png"
 image bas angry = "MainCharacter/Bas_Angry.png"
 image bas happy = "MainCharacter/Bas_Happy.png"
