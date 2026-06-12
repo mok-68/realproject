@@ -60,6 +60,7 @@ label Act_1_2:
     nuse"แววตาของเขาช่างโดดเดี่ยวและน่ากลัวเหลือเกิน"
     nuse"เหมือนเขากำลังติดอยู่ในนรกที่พวกเรามองไม่เห็น..."
 
+    stop music
     scene scene_flicker
     show char_flicker:
         xpos -0.25 ypos 0.0
