@@ -121,16 +121,16 @@ label start:
     non"หมอเถื่อนพวกนั้นบอกว่ามันคือ 'โรคการรับรู้ผิดปกติ'"
     non"แต่สำหรับฉัน มันคือนรกบนดินชัดๆ มนุษย์ทุกคนรอบตัวกลายเป็นก้อนเนื้อเน่าเดินได้ ส่งกลิ่นบูดโชยเข้าจมูกจนอยากจะอ้วกตลอดเวลา"
     hide worm 
+    show Door_meat 
     play sound "sound-effect/door_sound.mp3"
     $ renpy.pause(2.0, hard=True)
     pause 5.0
     stop sound
-    show Door_meat 
+    
     pause 5.0
     hide Door_meat 
 
-    play sound "sound-effect/footstep_meat.mp3"
-    
+    play audio "./audio/sound-effect/footstep_meat.mp3" volume 10.0
     non"พยาบาลที่เดินเข้ามาฉีดยา... {w=5}"
     stop sound fadeout 3.0
     non"รูปร่างของเธอเหมือนเศษเนื้อเหลวๆ ที่พยายามประกอบร่างเป็นทรงมนุษย์ เสียงที่เธอทักทายฉันว่า"
