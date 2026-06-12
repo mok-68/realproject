@@ -1,19 +1,19 @@
 # --- ประกาศฉากกระพริบสลับกัน ---
 image scene_flicker:
     "medic-room-normal"  # ฉากแรก 
-    pause 0.3           
+    pause 0.2           
     "medic-room-meat"    # สลับเป็นฉากเนื้อ
-    pause 0.3
+    pause 0.2
     repeat               
 
 # --- ประกาศตัวละครกระพริบสลับกัน ---
 image char_flicker:
     "nus"                # ตัวละครร่างพยาบาลปกติ
-    pause 0.3
+    pause 0.2
     "meat_scaled"               # สลับเป็นร่างเนื้อ
-    pause 0.3
+    pause 0.2
     Solid("#0000")       # สลับเป็นภาพโปร่งใส (ตัวละครวับๆ แวมๆ)
-    pause 0.3
+    pause 0.2
     repeat
 
 image meat_scaled = im.Scale("sub_Character/meat.png", 2296, 1796)
