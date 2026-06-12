@@ -62,7 +62,6 @@ label Act_1_2:
 
     stop music fadeout 3.0
     play sound "audio/sound-effect/Tension_Flashback.mp3"
-    nuse"..."
     $ renpy.pause(4.0, hard=True)
     
     scene scene_flicker
