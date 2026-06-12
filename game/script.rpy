@@ -15,8 +15,15 @@ image ctc:
 define narrator = Character(callback=type_sound, ctc="ctc")
 define non = Character("นนท์", color="#2ddcff" ,callback=type_sound, ctc="ctc")
 define mei = Character("เมย์", color="#ff60f7",callback=type_sound, ctc="ctc")
+define bas = Character("บาส", color="#ff0000",callback=type_sound, ctc="ctc")
 define naijai_n = Character("บทพูดในใจ นนท์",callback=type_sound, ctc="ctc")
 define nuse = Character("พยาบาล",color="#fafafaff", ctc="ctc")
+image bas normal = "MainCharacter/Bas_normal.png"
+image bas angry = "MainCharacter/Bas_Angry.png"
+image bas happy = "MainCharacter/Bas_Happy.png"
+image bas panic = "MainCharacter/Bas_Panic.png"
+image bas sad = "MainCharacter/Bas_Sad.png"
+image bas talk = "MainCharacter/Bas_Talk.png"
 image Forest_Meat = "path/Forest-Meat.jpg"
 image black = im.Scale("path/black.jpg", 1920, 1080)
 image Forest_Noramal = "path/Forest-Noramal.png"
@@ -26,6 +33,10 @@ image medic_room_meat = "path/medic-room-meat.png"
 image medic_room_normal = "path/medic-room-normal.png"
 image Study_Room_meat = "path/Study-Room-meat.png"
 image study_room_normal = "path/study-room-normal.png"
+image bg house_room:
+    "house_room.png"
+    xsize 1920
+    ysize 1080
 image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
@@ -34,6 +45,7 @@ image stupid_video = Movie(play="StupidEndding.webm", loop=False, channel="movie
 image StupidEndding = "Endding/StupidEnding.png"
 image dev_logo = "images/Dev/HORIZON_LOGO.png"
 image game_logo = "images/Element/POF_logo.png"
+image nonSleep = "images/MainCharacter/nonSleep2.png"
 
 transform shadow:
     alpha 0.3
@@ -51,22 +63,21 @@ transform slide_fade_out:
 screen wakeup():
     add Solid("#000")
 
-label splashscreen:
-    scene black
-    pause 1.0
-    show dev_logo at truecenter 
-    with Dissolve(1.3)
-    $ renpy.pause(3.0, hard=True)
-    hide dev_logo 
-    with Dissolve(1.3)
-    pause 1.0
-    show game_logo at truecenter 
-    with Dissolve(1.3)
-    $ renpy.pause(3.0, hard=True)
-    hide game_logo 
-    with Dissolve(1.3)
-    pause 1.0
-    return
+#  scene black
+#    pause 1.0
+#    show dev_logo at truecenter 
+#   with Dissolve(1.3)
+#    $ renpy.pause(3.0, hard=True)
+#   hide dev_logo 
+#   with Dissolve(1.3)
+#  pause 1.0
+#  show game_logo at truecenter 
+# with Dissolve(1.3)
+#  $ renpy.pause(3.0, hard=True)
+#  hide game_logo 
+#  with Dissolve(1.3)
+# pause 1.0
+# return
 
 label start:
     $ preferences.text_cps = 15
@@ -133,7 +144,7 @@ label start:
     stop sound fadeout 3.0
     non"รูปร่างของเธอเหมือนเศษเนื้อเหลวๆ ที่พยายามประกอบร่างเป็นทรงมนุษย์ เสียงที่เธอทักทายฉันว่า"
     show text "{size=60}ตุบ!{/size}" at truecenter
-
+    $ renpy.pause(1.0, hard=True)
     with vpunch
     hide text
 
