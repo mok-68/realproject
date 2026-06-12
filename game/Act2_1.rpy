@@ -1,10 +1,15 @@
 # แก้ความไม่สมเหตุสมผล
 # 1.หมอหายไปไหน
 # 2.นนท์เอาเศษกระจกมาจากไหน
+image grass_meat = "path/grass_meat.png"
 
 
 
 label Act2_1:
+    "นนท์เริ่มมองไปรอบๆห้องที่เต็มไปด้วยกลิ่นคาวเลือดและเน่าเหม็นของเนื้อสัตว์ที่ถูกทิ้งไว้จนเน่าเปื่อย"
+    show grass_meat:
+        pos(0.5, 0.5) xanchor 0.5 yanchor 0.5
+    pause 2.0
     scene medic-room-meat
     play sound "audio/sound-effect/Boy-Scream.mp3" 
     pause 1.0
@@ -43,7 +48,7 @@ label Act2_1:
     show text "{size=60}ในขณะที่มนุษย์ทุกคนกลายเป็นปีศาจเนื้อเน่า...{/size}" at truecenter with dissolve
     pause
     hide text with dissolve
-
+    
     show text "{size=60}มีแค่เธอคนเดียว...{w=0.8} ที่ยังคงเป็น 'มนุษย์' ในสายตาของฉัน{/size}" at truecenter with dissolve
     pause
     hide text with dissolve
