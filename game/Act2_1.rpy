@@ -1,5 +1,14 @@
+# แก้ความไม่สมเหตุสมผล
+# 1.หมอหายไปไหน
+# 2.เมย์รู้จักนนท์ได้ยังไง
+# 3.นนท์เอาเศษกระจกมาจากไหน
+
+
+
 label Act2_1:
     scene medic-room-meat
+    play sound "audio/sound-effect/Boy-Scream.mp3" 
+    pause 1.0
     play audio "sound-effect/heart.mp3" loop fadein 3.0
     show afraid4 at left
     with dissolve
