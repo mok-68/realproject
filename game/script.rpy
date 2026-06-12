@@ -1,7 +1,22 @@
-﻿define non = Character("นนท์", color="#2ddcff")
-define mei = Character("เมย์", color="#ff60f7")
-define naijai_n = Character("บทพูดในใจ นนท์")
-define nuse = Character("พยาบาล",color="#fafafaff")
+﻿init python:
+    def type_sound(event, interact=True, **kwargs):
+        if event == "show":
+            renpy.sound.play("sound-effect/text_sound.mp3")
+        elif event == "slow_done" or event == "end":
+            renpy.sound.stop()
+        
+# image ctc = "ctc_arrow"
+image eyes = im.Scale("Element/ctc_eyes.png", 90, 70)
+image ctc:
+    "eyes"
+    linear 0.5 alpha 1.0
+    linear 0.5 alpha 0.2
+    repeat
+define narrator = Character(callback=type_sound, ctc="ctc")
+define non = Character("นนท์", color="#2ddcff" ,callback=type_sound, ctc="ctc")
+define mei = Character("เมย์", color="#ff60f7",callback=type_sound, ctc="ctc")
+define naijai_n = Character("บทพูดในใจ นนท์",callback=type_sound, ctc="ctc")
+define nuse = Character("พยาบาล",color="#fafafaff", ctc="ctc")
 image Forest_Meat = "path/Forest-Meat.jpg"
 image black = im.Scale("path/black.jpg", 1920, 1080)
 image Forest_Noramal = "path/Forest-Noramal.png"
