@@ -17,7 +17,7 @@ label Act2_2:
         zoom 2.0
         xalign -0.15
         yalign 1.0
-    scene house_room with dissolve
+    scene house_room2 with dissolve
     bas "จวยเอ๊ย! กลิ่นเหม็นเน่าอะไรในบ้านนี้วะเนี่ย?! กลิ่นคาวเลือดโชยมาจนฉันจะอ้วก..."
 
     stop sound fadeout 1.5
@@ -33,11 +33,13 @@ label Act2_2:
         xalign -0.15
         yalign 1.0
     bas "เฮ้ย!! เชี่ยอะไรวะนั่น!!"
+    scene house_room with dissolve
     show nonSleep:
         zoom 0.5
         xalign 0.85
         yalign 0.6
     with dissolve
+    
     bas "นนท์นั่งอยู่บนพื้นบ้านผุๆ แววตามันดูลอยๆ มีความสุขเชื่อมเชื่อม..."
     
     bas "มันกำลังนอนหนุน... ไม่ใช่สิ!"
@@ -46,7 +48,7 @@ label Act2_2:
 
 
     bas "มันกำลังนอนหนุนก้อนเนื้อเหลวขนาดยักษ์ที่มีหนวดตะปุ่มตะป่ำยั้วเยี้ย!"
-    
+    scene house_room2 with dissolve
     bas "สัตว์ประหลาดตัวนั้นกำลังเอาหนวดเมือกๆ ลูบหัวนนท์..."
 
     # 4. ฉากกินศพชวนอ้วก

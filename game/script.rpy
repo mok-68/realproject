@@ -50,6 +50,11 @@ image bg house_room:
     "house_room.png"
     xsize 1920
     ysize 1080
+
+image bg house_room2:
+    "house_room2.png"
+    xsize 1920
+    ysize 1080
 image meat = im.Scale("sub_Character/meat.png", 1000, 800)
 image meat_shadows = im.Scale("sub_Character/meat.png", 1000, 800)
 image Door_meat = "path/Door-meat.png"
